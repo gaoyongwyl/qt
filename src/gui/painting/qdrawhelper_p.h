@@ -499,13 +499,13 @@ public:
             b += delta_b;
         }
 
-        const typename Simd::Float32x4 v_delta_delta_det16 = Simd::v_dup(16 * delta_delta_det);
-        const typename Simd::Float32x4 v_delta_delta_det6 = Simd::v_dup(6 * delta_delta_det);
-        const typename Simd::Float32x4 v_delta_b4 = Simd::v_dup(4 * delta_b);
-
-        const typename Simd::Float32x4 v_r0 = Simd::v_dup(data->gradient.radial.focal.radius);
-        const typename Simd::Float32x4 v_dr = Simd::v_dup(op->radial.dr);
-
+        const typename Simd::Float32x4 v_delta_delta_det16 = Simd::v_dup((float)(16 * delta_delta_det));
+        const typename Simd::Float32x4 v_delta_delta_det6 = Simd::v_dup((float)(6 * delta_delta_det));
+        const typename Simd::Float32x4 v_delta_b4 = Simd::v_dup((float)(4 * delta_b));
+ 
+        const typename Simd::Float32x4 v_r0 = Simd::v_dup((float)(data->gradient.radial.focal.radius));
+        const typename Simd::Float32x4 v_dr = Simd::v_dup((float)(op->radial.dr));
+ 
         const typename Simd::Float32x4 v_min = Simd::v_dup(0.0f);
         const typename Simd::Float32x4 v_max = Simd::v_dup(float(GRADIENT_STOPTABLE_SIZE-1));
         const typename Simd::Float32x4 v_half = Simd::v_dup(0.5f);
