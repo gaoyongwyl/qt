@@ -1299,7 +1299,7 @@ typedef int QNoImplicitBoolCast;
 #if defined(QT_COORD_TYPE)
 typedef QT_COORD_TYPE qreal;
 #elif defined(QT_NO_FPU) || defined(QT_ARCH_ARM) || defined(QT_ARCH_WINDOWSCE) || defined(QT_ARCH_SYMBIAN)
-typedef float qreal;
+typedef double qreal;
 #else
 typedef double qreal;
 #endif
